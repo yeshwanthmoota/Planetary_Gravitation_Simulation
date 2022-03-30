@@ -1,3 +1,6 @@
+Author: Yeshwanth Mootakoduru
+Email: yeshwanthmootakoduru@gmail.com
+
 Some Facts of this project:
     1. Real original values of Gravitational Constant is not used
     2. When the planets collide they perform a elastic collision
