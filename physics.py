@@ -31,18 +31,29 @@ class Planet: # Assuming all the planets have the same density
                 self.vel_x = escape_vel * math.sin(theta)
                 self.vel_y = -1 * escape_vel * math.cos(theta)
             elif choice == 3:
-                # random launch
-                ###
+                # # random launch
+                # ###
+                # planet = planets[0]
+                # mass = DENSITY * (planet.radius**3) * SCALE
+                # distance = math.sqrt((planet.x - x_pos)**2 + (planet.y - y_pos)**2)
+                # orbital_vel = math.sqrt(GRAVITATIONAL_CONSTANT * mass / distance)
+                # escape_vel = math.sqrt(2) * orbital_vel
+                # ###
+                # theta = (random.random())*2*math.pi
+                # vel_total = (random.random())*(escape_vel - orbital_vel) + orbital_vel
+                # self.vel_x = vel_total * math.sin(theta)
+                # self.vel_y = -1 * vel_total * math.cos(theta)
+
+
+                # Elliptical Orbit
                 planet = planets[0]
                 mass = DENSITY * (planet.radius**3) * SCALE
                 distance = math.sqrt((planet.x - x_pos)**2 + (planet.y - y_pos)**2)
                 orbital_vel = math.sqrt(GRAVITATIONAL_CONSTANT * mass / distance)
-                escape_vel = math.sqrt(2) * orbital_vel
-                ###
-                theta = (random.random())*2*math.pi
-                vel_total = (random.random())*(escape_vel - orbital_vel) + orbital_vel
-                self.vel_x = vel_total * math.sin(theta)
-                self.vel_y = -1 * vel_total * math.cos(theta)
+                theta = planet.angle_calc(self)
+                self.vel_x = orbital_vel * math.sin(theta)/math.pow(2, 1/2)
+                self.vel_y = -1 * orbital_vel * math.cos(theta)/math.pow(2, 1/2)
+
             elif choice == 4:
                 planet = planets[0]
                 theta = planet.angle_calc(self) - math.pi/2
