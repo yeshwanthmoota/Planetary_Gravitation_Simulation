@@ -44,7 +44,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONDOWN: # home ship shoots if left-mouse-click is detected
+            if event.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pressed(num_buttons=3) == (1, 0, 0):
                     planet_pos = pygame.mouse.get_pos()
                     new_planet = Planet(planet_pos[0], planet_pos[1], PLANET_RADIUS, PLANET_COLOR, CHOICE, planets)
@@ -78,7 +78,7 @@ def main():
                     PLANET_RADIUS = 20
                     PLANET_COLOR = RED
                     CHOICE = 2
-                if event.key == pygame.K_8: # random launch
+                if event.key == pygame.K_8: # elliptical launch
                     PLANET_RADIUS = 20
                     PLANET_COLOR = GREEN
                     CHOICE = 3
